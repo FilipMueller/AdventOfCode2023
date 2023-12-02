@@ -25,24 +25,19 @@ public class DayOne {
     private static int calculateCalibrationValue(String line) {
         Pattern pattern = Pattern.compile("(1|2|3|4|5|6|7|8|9|one|two|three|four|five|six|seven|eight|nine)");
         Pattern patternReversed = Pattern.compile("(1|2|3|4|5|6|7|8|9|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin)");
-        Matcher matcher = pattern.matcher(line);
 
-        StringBuilder sB = new StringBuilder();
-        String lineReversed = sB.append(line).reverse().toString();
-        Matcher matcherReversed = patternReversed.matcher(lineReversed);
+        Matcher matcherReversed = patternReversed.matcher(new StringBuilder().append(line).reverse().toString());
+        Matcher matcher = pattern.matcher(line);
 
         StringBuilder digits = new StringBuilder();
 
         if (matcher.find()) {
-            String str = matcher.group();
-            digits.append(mapStringToDigit(str));
+            digits.append(mapStringToDigit(matcher.group()));
         }
 
         if (matcherReversed.find()) {
-            String str = matcherReversed.group();
-            digits.append(mapStringToDigit(str));
+            digits.append(mapStringToDigit(matcherReversed.group()));
         }
-
 
         return Integer.parseInt(digits.substring(0, 1) + digits.substring(digits.length() - 1));
     }
