@@ -1,12 +1,14 @@
+package Day1;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DayOne {
+public class Day1 {
     public static void main(String[] args) throws IOException {
-        int sum = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\PuzzleInput.txt"))
+        int sum = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\DayOne\\PuzzleInput.txt"))
                 .lines()
                 .mapToInt(line -> Integer.parseInt(line.replaceAll("[^0-9]", "").charAt(0) +
                         line.replaceAll("[^0-9]", "").substring(line.replaceAll("[^0-9]", "").length() - 1)))
@@ -14,9 +16,9 @@ public class DayOne {
 
         System.out.println(sum);
 
-        int sum2 = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\PuzzleInput.txt"))
+        int sum2 = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\DayOne\\PuzzleInput.txt"))
                 .lines()
-                .mapToInt(DayOne::calculateCalibrationValue)
+                .mapToInt(Day1::calculateCalibrationValue)
                 .sum();
 
         System.out.println(sum2);
