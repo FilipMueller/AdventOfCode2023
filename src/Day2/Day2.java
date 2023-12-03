@@ -6,14 +6,14 @@ import java.io.FileReader;
 
 public class Day2 {
     public static void main(String[] args) throws FileNotFoundException {
-        int puzzleOne = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\DayTwo\\PuzzleInput.txt"))
+        int puzzleOne = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\Day2\\PuzzleInput.txt"))
                 .lines()
                 .mapToInt(Day2::gameIsPossible)
                 .sum();
 
         System.out.println(puzzleOne);
 
-        int puzzleTwo = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\DayTwo\\PuzzleInput.txt"))
+        int puzzleTwo = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\Day2\\PuzzleInput.txt"))
                 .lines()
                 .mapToInt(Day2::powerOfSets)
                 .sum();

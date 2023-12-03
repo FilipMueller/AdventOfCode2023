@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Day1 {
     public static void main(String[] args) throws IOException {
-        int sum = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\DayOne\\PuzzleInput.txt"))
+        int sum = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\Day1\\PuzzleInput.txt"))
                 .lines()
                 .mapToInt(line -> Integer.parseInt(line.replaceAll("[^0-9]", "").charAt(0) +
                         line.replaceAll("[^0-9]", "").substring(line.replaceAll("[^0-9]", "").length() - 1)))
@@ -16,7 +16,7 @@ public class Day1 {
 
         System.out.println(sum);
 
-        int sum2 = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\DayOne\\PuzzleInput.txt"))
+        int sum2 = new BufferedReader(new FileReader("E:\\Programming\\AdventOfCode2023\\src\\Day1\\PuzzleInput.txt"))
                 .lines()
                 .mapToInt(Day1::calculateCalibrationValue)
                 .sum();
